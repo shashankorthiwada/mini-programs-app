@@ -3,12 +3,12 @@ const userBirthDay = document.querySelector(".prime-day");
 const birthPrimebtn = document.querySelector(".prime-btn");
 const birthPrimeOut = document.querySelector(".prime-output-div");
 
-let primePattern = /^[0-9]{2}$/;
+let primePattern = /^[0-9]{0,2}$/;
 
 birthPrimebtn.addEventListener("click", () => {
   let userMonth = userBirthMonth.value;
   let userDay = userBirthDay.value;
-  if (Number(userMonth) <= 12 && primePattern.test(userMonth)) {
+  if (Number(userMonth) <= 12 && primePattern.test(Number(userMonth))) {
     if (
       ((Number(userMonth) > 2 && Number(userDay) <= 31) ||
         (Number(userMonth) === 2 && Number(userDay) < 30)) &&
